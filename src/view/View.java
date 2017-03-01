@@ -4,6 +4,7 @@ import controller.Controller;
 import model.Listener;
 import model.Model;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.layout.*;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.*;
@@ -41,6 +42,8 @@ public class View implements Listener{
 
         err = new Label(shell, SWT.NONE);
         err.setLayoutData(longspan);
+        Color red = new Color(display, 255, 0, 0);
+        err.setForeground(red);
 
         Button clrButton = new Button(shell, SWT.PUSH);
         clrButton.setLayoutData(square);
@@ -164,7 +167,14 @@ public class View implements Listener{
     @Override
     public void numberChanged(String display) {
         //System.out.println("Number changed");
+        err.setText("");
         numdisplay.setText(display);
         numdisplay.getParent().layout();
+    }
+
+    @Override
+    public void invalidCompute() {
+        err.setText("Invalid expression");
+        err.getParent().layout();
     }
 }
