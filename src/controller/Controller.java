@@ -20,18 +20,19 @@ public class Controller extends SelectionAdapter{
 
             if(input.equals("Clear")) {
                 m.clear();
-            }
-
-            if (input.equals("Debug")) {
+            } else if (input.equals("Del")) {
+                m.del();
+            } else if (input.equals("M+")){
+                m.memSet();
+            } else if(input.equals("MRC")) {
+                m.getMem();
+            } else if (input.equals("Debug")) {
                 m.debug();
-            }
-
-            if (input.matches("[0-9]|[-+*^/]")) {
+            } else if (input.matches("[0-9]|[-+.*^/]")) {
                 System.out.println("Matched");
                 m.input(input);
-            }
-            else {
-
+            } else if (input.equals("=")) {
+                m.eval();
             }
 
         }
