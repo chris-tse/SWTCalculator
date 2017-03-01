@@ -36,7 +36,6 @@ public class View implements Listener{
         GridData longspan = new GridData(SWT.FILL, SWT.TOP, false, false, 4, 1);
 
         numdisplay = new Text(shell, SWT.RIGHT | SWT.BORDER);
-        numdisplay.setEnabled(false);
         numdisplay.setText("0");
         numdisplay.setLayoutData(longspan);
 
