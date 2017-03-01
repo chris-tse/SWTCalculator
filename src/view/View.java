@@ -30,7 +30,7 @@ public class View implements Listener{
         Display display = new Display();
         Shell shell = new Shell(display);
         shell.setLayout(new GridLayout(4, true));
-        shell.setSize(400, 300);
+        shell.setSize(500, 400);
 
         GridData square = new GridData(SWT.FILL, SWT.FILL, true, true, 1, 1);
         GridData longspan = new GridData(SWT.FILL, SWT.TOP, false, false, 4, 1);
@@ -40,10 +40,18 @@ public class View implements Listener{
         numdisplay.setText("0");
         numdisplay.setLayoutData(longspan);
 
-        err = new Label(shell, SWT.NONE);
+        err = new Label(shell, SWT.RIGHT);
         err.setLayoutData(longspan);
         Color red = new Color(display, 255, 0, 0);
         err.setForeground(red);
+
+        Button delButton = new Button(shell, SWT.PUSH);
+        delButton.setLayoutData(square);
+        delButton.setText("Del");
+        delButton.addSelectionListener(c);
+
+        Label blank1 = new Label(shell, SWT.NONE);
+        blank1.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false, 3, 1));
 
         Button clrButton = new Button(shell, SWT.PUSH);
         clrButton.setLayoutData(square);
@@ -125,10 +133,15 @@ public class View implements Listener{
         divButton.setText("/");
         divButton.addSelectionListener(c);
 
-        Button debug = new Button(shell, SWT.PUSH);
-        debug.setLayoutData(square);
-        debug.setText("Debug");
-        debug.addSelectionListener(c);
+        Button dotButton = new Button(shell, SWT.PUSH);
+        dotButton.setLayoutData(square);
+        dotButton.setText(".");
+        dotButton.addSelectionListener(c);
+
+//        Button debug = new Button(shell, SWT.PUSH);
+//        debug.setLayoutData(square);
+//        debug.setText("Debug");
+//        debug.addSelectionListener(c);
 
         //Label blank = new Label(shell, SWT.NONE);
 
