@@ -47,6 +47,8 @@ public class Model {
         splitString();
         if(!isValid()) {
             notifyInvalidListener();
+        } else if(splitList.size() <= 1) {
+            return;
         } else {
             splitString();
             int index;
