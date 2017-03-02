@@ -105,10 +105,9 @@ public class Model {
     }
 
     public boolean isValid() {
-        for (String str : split) {
-            if (str.matches("[-+*^/]{2,}")) return false;
-        }
-        if(split[0].matches("[-+*^/]+") || split[split.length - 1].matches("[-+.*^/]+")) return false;
+        for (int i = 0; i < split.length - 2 ; i++)
+            if(split[i].matches("[-+*^/]") && split[i+1].matches("[-+*^/]")) return false;
+
         return true;
     }
 
@@ -133,7 +132,7 @@ public class Model {
 
     private void splitString() {
         splitList.clear();
-        split = exp.split("(?<=[-+*/()])|(?=[-+*/()])");
+        split = exp.split("(?<=[-+*/^()])|(?=[-+*/^()])");
         Collections.addAll(splitList, split);
     }
 
