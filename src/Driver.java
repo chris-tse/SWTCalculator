@@ -1,11 +1,5 @@
 import controller.Controller;
 import model.Model;
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Text;
 import view.View;
 
 /**
@@ -19,12 +13,5 @@ public class Driver {
         Controller c = new Controller(m);
 
         new View(c, m);
-
-
-
-
-
-
-
     }
 }
