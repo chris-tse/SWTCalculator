@@ -38,6 +38,7 @@ public class View implements Listener{
         numdisplay = new Text(shell, SWT.RIGHT | SWT.BORDER);
         numdisplay.setText("0");
         numdisplay.setLayoutData(longspan);
+        numdisplay.setEditable(false);
 
         err = new Label(shell, SWT.RIGHT);
         err.setLayoutData(longspan);
